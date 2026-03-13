@@ -1,53 +1,84 @@
 package edu.rit.group7.model;
 
-import org.springframework.stereotype.Component;
+import java.util.ArrayList;
+import java.util.List;
 
-@Component
 public class User {
+    private String fullName;
+    private String phoneNumber;
+    private int age;
+    private String city;
+    private String email;
+    private List<RecyclingLog> logs = new ArrayList<>();  // One-to-many: user enrolls in logs
 
-    private String FullName;
-    private String PhoneNumber;
-    private int Age;
-    private String City;
-    private String Email;
+    // Default constructor
+    public User() {}
 
-    public String getCity() {
-        return City;
+    // Constructor without logs
+    public User(String fullName, String phoneNumber, int age, String city, String email) {
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.age = age;
+        this.city = city;
+        this.email = email;
     }
 
-    public void setCity(String city) {
-        City = city;
+    // Full constructor
+    public User(String fullName, String phoneNumber, int age, String city, String email, List<RecyclingLog> logs) {
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.age = age;
+        this.city = city;
+        this.email = email;
+        this.logs = logs != null ? logs : new ArrayList<>();
     }
 
-    public int getAge() {
-        return Age;
-    }
-
-    public void setAge(int age) {
-        Age = age;
-    }
-
-    public String getPhoneNumber() {
-        return PhoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
-    }
-
+    // Getters and Setters
     public String getFullName() {
-        return FullName;
+        return fullName;
     }
 
     public void setFullName(String fullName) {
-        FullName = fullName;
+        this.fullName = fullName;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
+    }
+
+    public List<RecyclingLog> getLogs() {
+        return logs;
+    }
+
+    public void setLogs(List<RecyclingLog> logs) {
+        this.logs = (logs != null) ? logs : new ArrayList<>();
     }
 }
