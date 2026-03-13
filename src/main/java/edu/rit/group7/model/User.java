@@ -78,7 +78,5 @@ public class User {
         return logs;
     }
 
-    public void setLogs(List<RecyclingLog> logs) {
-        this.logs = (logs != null) ? logs : new ArrayList<>();
-    }
+    public void setLogs(List<RecyclingLog> logs) { this.logs = logs; }
 }
