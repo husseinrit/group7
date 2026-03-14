@@ -1,10 +1,8 @@
 package edu.rit.group7.model;
 
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
 public class DropOffLocation {
     private int locationId;
     private String name;
@@ -15,8 +13,6 @@ public class DropOffLocation {
     private Double longitude;
     private Double latitude;
 
-
-    // Getters and Setters
 
     public int getLocationId() {
         return locationId;

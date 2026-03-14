@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Location</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: lightgreen;
+            color: darkgreen;
+            text-align: center;
+            padding: 60px;
+        }
+
+        h1 {
+            color: green;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px 50px;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 2px 2px 10px gray;
+        }
+
+        input {
+            padding: 8px;
+            margin: 10px;
+            width: 200px;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+
+        a {
+            color: darkgreen;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Add Drop Off Location</h1>
+
+    <form action="/locations/add" method="post">
+
+        <br>
+
+        <input type="text" name="name" placeholder="Location Name">
+
+        <br>
+
+        <input type="text" name="address" placeholder="Address">
+
+        <br>
+
+        <input type="text" name="openingTime" placeholder="Opening Time">
+
+        <br>
+
+        <input type="text" name="closingTime" placeholder="Closing Time">
+
+        <br><br>
+
+        <button type="submit">Add Location</button>
+
+    </form>
+
+    <br><br>
+
+    <a href="/">Back to Home</a>
+
+</div>
+
+</body>
+</html>
