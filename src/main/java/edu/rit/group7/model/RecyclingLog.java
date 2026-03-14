@@ -17,6 +17,21 @@ public class RecyclingLog {
     private double estimatedCO2Saved;
     private double divertedFromLandfillKg;
 
+    public RecyclingLog() {
+
+    }
+
+    public RecyclingLog(int logId, int userId, int itemId, int quantity, LocalDate date,
+                        double estimatedCO2Saved, double divertedFromLandfillKg) {
+        this.logId=logId;
+        this.userId=userId;
+        this.itemId=itemId;
+        this.quantity=quantity;
+        this.date=date;
+        this.estimatedCO2Saved=estimatedCO2Saved;
+        this.divertedFromLandfillKg=divertedFromLandfillKg;
+    }
+
     public int getUserId() {
         return userId;
     }
