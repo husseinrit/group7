@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Add New User - Reloop</title>
+    <title>Add Location</title>
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -11,12 +11,13 @@
             text-align: center;
             padding: 60px;
         }
+
         h1 {
             color: green;
             font-size: 2.5rem;
             margin-bottom: 40px;
-            text-shadow: 1px 1px lightgreen;
         }
+
         .container {
             background-color: white;
             padding: 30px 50px;
@@ -24,44 +25,70 @@
             display: inline-block;
             box-shadow: 2px 2px 10px gray;
         }
-        form {
-            text-align: left;
-            display: inline-block;
-        }
+
         input {
-            margin-bottom: 10px;
             padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            margin: 10px;
+            width: 200px;
         }
+
         button {
             background-color: green;
             color: white;
-            padding: 10px 20px;
             border: none;
-            border-radius: 5px;
+            padding: 10px 20px;
+            border-radius: 6px;
             cursor: pointer;
         }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+
         a {
             color: darkgreen;
-            text-decoration: none;
             font-weight: bold;
+            text-decoration: none;
         }
+
     </style>
 </head>
+
 <body>
+
 <div class="container">
-    <h1>Add New User</h1>
-    <form method="post" action="/user/add">
-        Full Name: <br><input name="fullName" required><br>
-        Phone: <br><input name="phoneNumber" required><br>
-        Age: <br><input name="age" type="number" required><br>
-        City: <br><input name="city" required><br>
-        Email: <br><input name="email" type="email" required><br><br>
-        <button type="submit">Add User</button>
+
+    <h1>Add Drop Off Location</h1>
+
+    <form action="/locations/add" method="post">
+
+        <br>
+
+        <input type="text" name="name" placeholder="Location Name">
+
+        <br>
+
+        <input type="text" name="address" placeholder="Address">
+
+        <br>
+
+        <input type="text" name="openingTime" placeholder="Opening Time">
+
+        <br>
+
+        <input type="text" name="closingTime" placeholder="Closing Time">
+
+        <br><br>
+
+        <button type="submit">Add Location</button>
+
     </form>
+
     <br><br>
-    <a href="/">Home</a>
+
+    <a href="/">Back to Home</a>
+
 </div>
+
 </body>
 </html>

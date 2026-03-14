@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
 public class DropOffLocation {
     private int locationId;
     private String name;
