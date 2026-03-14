@@ -1,4 +1,5 @@
-package edu.rit.group7.model;
+package edu.rit.group7.Service;
+import edu.rit.group7.model.User;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;

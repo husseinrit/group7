@@ -1,4 +1,6 @@
-package edu.rit.group7.model;
+package edu.rit.group7.Controller;
+import edu.rit.group7.Service.SustainabilityService;
+import edu.rit.group7.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
