@@ -1,12 +1,10 @@
 package edu.rit.group7.model;
 
 
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 
-@Component
 public class RecyclingLog {
 
     private int logId;
