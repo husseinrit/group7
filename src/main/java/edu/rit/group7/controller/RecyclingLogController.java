@@ -1,7 +1,7 @@
 package edu.rit.group7.controller;
 
 import edu.rit.group7.model.RecyclingLog;
-import edu.rit.group7.service.SustainabilityService;
+import edu.rit.group7.service.RecyclingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class RecyclingLogController {
 
     @Autowired
-    private SustainabilityService service;
+    private RecyclingService service;
 
     @GetMapping("/recyclinglog")
     public String viewLogs(Model model) {
