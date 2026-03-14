@@ -1,8 +1,6 @@
 package edu.rit.group7.model;
 
-import org.springframework.stereotype.Component;
 
-@Component
 public class RecyclingItem {
     private int itemId;
     private String itemName;
