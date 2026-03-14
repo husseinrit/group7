@@ -1,0 +1,32 @@
+<h1>Recycling Logs</h1>
+
+<table border="1">
+<tr>
+<th>Log ID</th>
+<th>User ID</th>
+<th>Item ID</th>
+<th>Quantity</th>
+<th>Date</th>
+<th>CO2 Saved</th>
+<th>Landfill Diverted</th>
+</tr>
+
+{{#logs}}
+<tr>
+<td>{{logId}}</td>
+<td>{{userId}}</td>
+<td>{{itemId}}</td>
+<td>{{quantity}}</td>
+<td>{{date}}</td>
+<td>{{estimatedCO2Saved}}</td>
+<td>{{divertedFromLandfillKg}}</td>
+</tr>
+{{/logs}}
+
+</table>
+
+<br>
+
+<a href="/recyclinglog/add">Add Recycling Log</a>
+<br>
+<a href="/">Home</a>

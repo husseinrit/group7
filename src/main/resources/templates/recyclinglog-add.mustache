@@ -1,0 +1,28 @@
+<h1>Add Recycling Log</h1>
+
+<form action="/recyclinglog/add" method="post">
+
+    Log ID:
+    <input type="number" name="logId"><br><br>
+
+    User ID:
+    <input type="number" name="userId"><br><br>
+
+    Item ID:
+    <input type="number" name="itemId"><br><br>
+
+    Quantity:
+    <input type="number" name="quantity"><br><br>
+
+    Estimated CO2 Saved:
+    <input type="number" step="0.01" name="estimatedCO2Saved"><br><br>
+
+    Diverted From Landfill (kg):
+    <input type="number" step="0.01" name="divertedFromLandfillKg"><br><br>
+
+    <button type="submit">Add Log</button>
+
+</form>
+
+<br>
+<a href="/recyclinglog">Back</a>
