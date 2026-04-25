@@ -1,20 +1,33 @@
+// Hussein Al Salami - 746006849
 package edu.rit.group7.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "user")
 public class User {
-    private String fullName;
-    private String phoneNumber;
-    private int age;
-    private String city;
-    private String email;
-    private List<RecyclingLog> logs = new ArrayList<>();  // One-to-many: user enrolls in logs
 
-    // Default constructor
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "full_name", nullable = false, length = 120)
+    private String fullName;
+
+    @Column(name = "phone_number", length = 20)
+    private String phoneNumber;
+
+    @Column(name = "age")
+    private int age;
+
+    @Column(name = "city", length = 80)
+    private String city;
+
+    @Column(name = "email", length = 120)
+    private String email;
+
     public User() {}
 
-    // Constructor without logs
     public User(String fullName, String phoneNumber, int age, String city, String email) {
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
@@ -23,60 +36,21 @@ public class User {
         this.email = email;
     }
 
-    // Full constructor
-    public User(String fullName, String phoneNumber, int age, String city, String email, List<RecyclingLog> logs) {
-        this.fullName = fullName;
-        this.phoneNumber = phoneNumber;
-        this.age = age;
-        this.city = city;
-        this.email = email;
-        this.logs = logs != null ? logs : new ArrayList<>();
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    // Getters and Setters
-    public String getFullName() {
-        return fullName;
-    }
+    public String getFullName() { return fullName; }
+    public void setFullName(String fullName) { this.fullName = fullName; }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
+    public String getPhoneNumber() { return phoneNumber; }
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
+    public int getAge() { return age; }
+    public void setAge(int age) { this.age = age; }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public List<RecyclingLog> getLogs() {
-        return logs;
-    }
-
-    public void setLogs(List<RecyclingLog> logs) { this.logs = logs; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 }

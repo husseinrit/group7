@@ -1,84 +1,71 @@
+// Hussein Al Salami - 746006849
 package edu.rit.group7.model;
 
-import org.springframework.stereotype.Component;
+import jakarta.persistence.*;
 
-import java.util.List;
-
+@Entity
+@Table(name = "drop_off_location")
 public class DropOffLocation {
-    private int locationId;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "name", nullable = false, length = 120)
     private String name;
+
+    @Column(name = "address", length = 200)
     private String address;
-    private List<String> acceptedCategories;
+
+    @Column(name = "accepted_categories", length = 300)
+    private String acceptedCategories;
+
+    @Column(name = "opening_time", length = 10)
     private String openingTime;
+
+    @Column(name = "closing_time", length = 10)
     private String closingTime;
+
+    @Column(name = "longitude")
     private Double longitude;
+
+    @Column(name = "latitude")
     private Double latitude;
 
+    public DropOffLocation() {}
 
-    // Getters and Setters
-
-    public int getLocationId() {
-        return locationId;
-    }
-
-    public void setLocationId(int locationId) {
-        this.locationId = locationId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public DropOffLocation(String name, String address, String acceptedCategories,
+                           String openingTime, String closingTime, Double longitude, Double latitude) {
         this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
         this.address = address;
-    }
-
-    public List<String> getAcceptedCategories() {
-        return acceptedCategories;
-    }
-
-    public void setAcceptedCategories(List<String> acceptedCategories) {
         this.acceptedCategories = acceptedCategories;
-    }
-
-    public String getOpeningTime() {
-        return openingTime;
-    }
-
-    public void setOpeningTime(String openingTime) {
         this.openingTime = openingTime;
-    }
-
-    public String getClosingTime() {
-        return closingTime;
-    }
-
-    public void setClosingTime(String closingTime) {
         this.closingTime = closingTime;
-    }
-
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
         this.longitude = longitude;
-    }
-
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
+
+    public String getAcceptedCategories() { return acceptedCategories; }
+    public void setAcceptedCategories(String acceptedCategories) { this.acceptedCategories = acceptedCategories; }
+
+    public String getOpeningTime() { return openingTime; }
+    public void setOpeningTime(String openingTime) { this.openingTime = openingTime; }
+
+    public String getClosingTime() { return closingTime; }
+    public void setClosingTime(String closingTime) { this.closingTime = closingTime; }
+
+    public Double getLongitude() { return longitude; }
+    public void setLongitude(Double longitude) { this.longitude = longitude; }
+
+    public Double getLatitude() { return latitude; }
+    public void setLatitude(Double latitude) { this.latitude = latitude; }
 }

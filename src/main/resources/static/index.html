@@ -2,91 +2,154 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to Reloop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloop - Sustainability & Recycling Portal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: lightgreen;
-            color: darkgreen;
-            text-align: center;
-            padding: 60px;
+        body { background-color: #f0f7f0; }
+        .navbar { background-color: #2e7d32; }
+        .hero {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 60%, #43a047 100%);
+            color: white; padding: 80px 0 60px;
         }
-
-        h1 {
-            color: green;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px lightgreen;
+        .hero h1 { font-size: 3rem; font-weight: 700; }
+        .hero p { font-size: 1.25rem; opacity: 0.9; }
+        .feature-card {
+            border: none; border-radius: 12px; transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); height: 100%;
         }
-
-        p {
-            margin: 15px 0;
-            font-size: 1.2rem;
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+        .feature-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+        .nav-card {
+            display: block; text-decoration: none; background: white;
+            border-radius: 12px; padding: 30px 20px; text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;
+            color: #2e7d32; border: 2px solid transparent;
         }
-
-        p span {
-            font-weight: bold;
-            color: darkolivegreen;
-        }
-
-        .container {
-            background-color: white;
-            padding: 30px 50px;
-            border-radius: 12px;
-            display: inline-block;
-            box-shadow: 2px 2px 10px gray;
-        }
-
-
+        .nav-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); border-color: #2e7d32; color: #1b5e20; }
+        .nav-card .icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .nav-card h5 { font-weight: 700; margin-bottom: 6px; }
+        .section-title { color: #2e7d32; font-weight: 700; border-left: 4px solid #2e7d32; padding-left: 12px; }
+        footer { background-color: #1b5e20; color: white; padding: 20px 0; margin-top: 60px; }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>Welcome to Reloop </h1>
-    <p>An <span>interactive sustainability</span> and recycling portal</p>
-    <p>Helps users <span>recycle correctly</span> and reduce waste</p>
-    <p>Acts as a <span>smart guide</span>, not just an information website</p>
-    <p>Provides <span>clear recycling instructions</span> based on location</p>
-    <p>Motivates users through <span>progress tracking and challenges</span></p>
 
-    <a href="#" class="call to action">Get Started</a>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="index.html">♻ Reloop</a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link text-white active" href="index.html">Home</a>
+            <a class="nav-link text-white" href="locations.html">Locations</a>
+            <a class="nav-link text-white" href="users.html">Users</a>
+            <a class="nav-link text-white" href="items.html">Items</a>
+            <a class="nav-link text-white" href="logs.html">Logs</a>
+        </div>
+    </div>
+</nav>
 
-    <br><br>
-
-    <a href="/locations">View Drop Off Locations</a>
-
-    <br><br>
-
-    <a href="/locations/add">Add Drop Off Location</a>
-
-    <br><br>
-
-    <a href="/user">Display User List</a>
-
-    <br><br>
-
-    <a href="/user/add">Add User</a>
-
-    <br><br>
-
-    <a href="/recyclinglog">View Recycling Logs</a>
-
-    <br><br>
-
-    <a href="/recyclinglog/add">View Recycling Logs</a>
-
-    <br><br>
-
-    <a href="/recycling">View Recycling Items</a>
-
-    <br><br>
-
-    <a href="/recycling/add">Add Recycling Items</a>
-
-
-
-
-
+<!-- Hero Section -->
+<div class="hero text-center">
+    <div class="container">
+        <div class="mb-3" style="font-size:4rem;">♻</div>
+        <h1>Welcome to Reloop</h1>
+        <p class="mb-4">Your smart sustainability and recycling portal.<br>Learn, track, and make a real environmental impact.</p>
+        <a href="locations.html" class="btn btn-light btn-lg me-2 fw-bold" style="color:#2e7d32;">Find Drop-Off Points</a>
+        <a href="logs.html" class="btn btn-outline-light btn-lg fw-bold">Track My Recycling</a>
+    </div>
 </div>
+
+<!-- Navigation Cards -->
+<div class="container my-5">
+    <h3 class="section-title mb-4">Explore Reloop</h3>
+    <div class="row g-4">
+        <div class="col-md-3 col-sm-6">
+            <a href="locations.html" class="nav-card">
+                <div class="icon">📍</div>
+                <h5>Drop Off Locations</h5>
+                <p class="text-muted small mb-0">Find recycling centres near you</p>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <a href="users.html" class="nav-card">
+                <div class="icon">👤</div>
+                <h5>Users</h5>
+                <p class="text-muted small mb-0">Manage registered members</p>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <a href="items.html" class="nav-card">
+                <div class="icon">🗂️</div>
+                <h5>Recycling Items</h5>
+                <p class="text-muted small mb-0">Browse recyclable material guides</p>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <a href="logs.html" class="nav-card">
+                <div class="icon">📋</div>
+                <h5>Recycling Logs</h5>
+                <p class="text-muted small mb-0">Track CO₂ savings and impact</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="container my-5">
+    <h3 class="section-title mb-4">Live Statistics</h3>
+    <div class="row g-4 text-center">
+        <div class="col-md-3">
+            <div class="feature-card card">
+                <div class="card-header bg-success text-white">📍 Locations</div>
+                <div class="card-body">
+                    <h2 class="text-success fw-bold" id="statLocations">-</h2>
+                    <p class="text-muted mb-0">Drop-off points</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="feature-card card">
+                <div class="card-header bg-primary text-white">👤 Users</div>
+                <div class="card-body">
+                    <h2 class="text-primary fw-bold" id="statUsers">-</h2>
+                    <p class="text-muted mb-0">Registered users</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="feature-card card">
+                <div class="card-header bg-warning text-dark">🗂️ Items</div>
+                <div class="card-body">
+                    <h2 class="text-warning fw-bold" id="statItems">-</h2>
+                    <p class="text-muted mb-0">Recycling guides</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="feature-card card">
+                <div class="card-header bg-info text-white">📋 Logs</div>
+                <div class="card-body">
+                    <h2 class="text-info fw-bold" id="statLogs">-</h2>
+                    <p class="text-muted mb-0">Recycling records</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="text-center">
+    <p class="mb-0">♻ Reloop — ISTE 240 Spring 2026 | Group 7 | Hussein Al Salami · Saif Alshamali · Naren Karthik</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Load live counts from each REST API
+    fetch('/api/locations').then(function(r) { return r.json(); }).then(function(d) { document.getElementById('statLocations').textContent = d.length; }).catch(function() {});
+    fetch('/api/users').then(function(r) { return r.json(); }).then(function(d) { document.getElementById('statUsers').textContent = d.length; }).catch(function() {});
+    fetch('/api/items').then(function(r) { return r.json(); }).then(function(d) { document.getElementById('statItems').textContent = d.length; }).catch(function() {});
+    fetch('/api/logs').then(function(r) { return r.json(); }).then(function(d) { document.getElementById('statLogs').textContent = d.length; }).catch(function() {});
+</script>
 </body>
 </html>
+

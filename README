@@ -1,11 +1,66 @@
-# Summary
+# Reloop - Sustainability & Recycling Portal
+
 Reloop is a sustainability and recycling portal that helps users learn how
 to recycle properly and adopt environmentally responsible habits.
-The platform provides clear guidance on recyclable materials, local recycling resources,
+The platform provides guidance on recyclable materials, local recycling resources,
 and community initiatives, with the goal of reducing waste and promoting a more sustainable future.
 
-# Team Members
-Mahmoud Elsayed (405005797)
-Hussein Al Salami (746006849)
-Saif Alshamali (410002147)
-Naren Karthik (746009107)
+## Group 7
+
+| Name             | ID        | Entity Responsibility         |
+|------------------|-----------|-------------------------------|
+| Hussein Al Salami| 746006849 | DropOffLocation, User         |
+| Saif Alshamali   | 410002147 | RecyclingItem                 |
+| Naren Karthik    | 746009107 | RecyclingLog                  |
+
+## Merge Manager: Hussein Al Salami (746006849)
+
+## Project Structure
+- `backend/` - Spring Boot application (Java, Spring Data JPA, MySQL)
+- `frontend/` - Static HTML/CSS/JS pages using Bootstrap 5 and fetch() API
+- `database/` - SQL seed data file (data.sql)
+
+## REST API Endpoints
+
+### Drop Off Locations (Hussein Al Salami)
+- GET    /api/locations
+- GET    /api/locations/{id}
+- GET    /api/locations/search?name=xxx
+- POST   /api/locations
+- PUT    /api/locations/{id}
+- DELETE /api/locations/{id}
+
+### Users (Hussein Al Salami)
+- GET    /api/users
+- GET    /api/users/{id}
+- GET    /api/users/search?email=xxx
+- POST   /api/users
+- PUT    /api/users/{id}
+- DELETE /api/users/{id}
+
+### Recycling Items (Saif Alshamali)
+- GET    /api/items
+- GET    /api/items/{id}
+- GET    /api/items/search?name=xxx
+- POST   /api/items
+- PUT    /api/items/{id}
+- DELETE /api/items/{id}
+
+### Recycling Logs (Naren Karthik)
+- GET    /api/logs
+- GET    /api/logs/{id}
+- GET    /api/logs/search?userId=xxx
+- POST   /api/logs
+- PUT    /api/logs/{id}
+- DELETE /api/logs/{id}
+
+## Database
+MySQL — database name: `iste240`
+Configure credentials in `src/main/resources/application.properties`
+
+## Technologies
+- Java 17, Spring Boot 3.4.5
+- Spring Data JPA, Hibernate
+- MySQL
+- HTML5, CSS3, JavaScript (fetch API)
+- Bootstrap 5

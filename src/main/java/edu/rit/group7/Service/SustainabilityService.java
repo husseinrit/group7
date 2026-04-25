@@ -1,26 +1,51 @@
+// Hussein Al Salami - 746006849
 package edu.rit.group7.Service;
+
+import edu.rit.group7.Repository.UserRepository;
 import edu.rit.group7.model.User;
-import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 @Service
 public class SustainabilityService {
-    private List<User> users = new ArrayList<>();
 
-    public void addUser(User user) {   // ← must exist, public, same name
-        users.add(user);
+    @Autowired
+    private UserRepository userRepository;
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 
-    @PostConstruct
-    public void initData() {
-        users.add(new User("Ahmed Ali", "+971501234567", 25, "Sharjah", "ahmed@example.com"));
-        users.add(new User("Fatima Khan", "+971501234568", 30, "Dubai", "fatima@example.com"));
-        users.add(new User("Omar Hassan", "+971501234569", 28, "Abu Dhabi", "omar@example.com"));
-
+    public User getById(Long id) {
+        return userRepository.findOneById(id);
     }
 
-    public List<User> getAllUsers() { return users; }
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    public List<User> findByCity(String city) {
+        return userRepository.findByCity(city);
+    }
+
+    public User addUser(User user) {
+        return userRepository.save(user);
+    }
+
+    public User update(Long id, User updated) {
+        updated.setId(id);
+        return userRepository.save(updated);
+    }
+
+    @Transactional
+    public void updateCity(Long id, String city) {
+        userRepository.updateCityById(id, city);
+    }
+
+    public void delete(Long id) {
+        userRepository.deleteById(id);
+    }
 }
-
