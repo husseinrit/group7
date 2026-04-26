@@ -1,81 +1,65 @@
+
+// Saif Alshamali - 410002147
 package edu.rit.group7.model;
 
-public class RecyclingItem {
-    private int itemId;
-    private String itemName;
-    private String category;
-    private boolean isRecyclable;
-    private String preparationSteps;
-    private String commonMistakes;
-    private String notes;
+import jakarta.persistence.*;
 
-    public RecyclingItem() {
-    }
+    @Entity
+    @Table(name = "recycling_item")
+    public class RecyclingItem {
 
-    public RecyclingItem(int itemId, String itemName, String category, boolean isRecyclable,
-                         String preparationSteps, String commonMistakes, String notes) {
-        this.itemId = itemId;
-        this.itemName = itemName;
-        this.category = category;
-        this.isRecyclable = isRecyclable;
-        this.preparationSteps = preparationSteps;
-        this.commonMistakes = commonMistakes;
-        this.notes = notes;
-    }
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
 
-    public int getItemId() {
-        return itemId;
-    }
+        @Column(name = "item_name", nullable = false, length = 120)
+        private String itemName;
 
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
+        @Column(name = "category", length = 80)
+        private String category;
 
-    public String getItemName() {
-        return itemName;
-    }
+        @Column(name = "is_recyclable")
+        private boolean isRecyclable;
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
+        @Column(name = "preparation_steps", length = 500)
+        private String preparationSteps;
 
-    public String getCategory() {
-        return category;
-    }
+        @Column(name = "common_mistakes", length = 500)
+        private String commonMistakes;
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
+        @Column(name = "notes", length = 300)
+        private String notes;
 
-    public boolean isRecyclable() {
-        return isRecyclable;
-    }
+        public RecyclingItem() {}
 
-    public void setRecyclable(boolean recyclable) {
-        isRecyclable = recyclable;
-    }
+        public RecyclingItem(String itemName, String category, boolean isRecyclable,
+                             String preparationSteps, String commonMistakes, String notes) {
+            this.itemName = itemName;
+            this.category = category;
+            this.isRecyclable = isRecyclable;
+            this.preparationSteps = preparationSteps;
+            this.commonMistakes = commonMistakes;
+            this.notes = notes;
+        }
 
-    public String getPreparationSteps() {
-        return preparationSteps;
-    }
+        public Long getId() { return id; }
+        public void setId(Long id) { this.id = id; }
 
-    public void setPreparationSteps(String preparationSteps) {
-        this.preparationSteps = preparationSteps;
-    }
+        public String getItemName() { return itemName; }
+        public void setItemName(String itemName) { this.itemName = itemName; }
 
-    public String getCommonMistakes() {
-        return commonMistakes;
-    }
+        public String getCategory() { return category; }
+        public void setCategory(String category) { this.category = category; }
 
-    public void setCommonMistakes(String commonMistakes) {
-        this.commonMistakes = commonMistakes;
-    }
+        public boolean isRecyclable() { return isRecyclable; }
+        public void setRecyclable(boolean recyclable) { isRecyclable = recyclable; }
 
-    public String getNotes() {
-        return notes;
-    }
+        public String getPreparationSteps() { return preparationSteps; }
+        public void setPreparationSteps(String preparationSteps) { this.preparationSteps = preparationSteps; }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+        public String getCommonMistakes() { return commonMistakes; }
+        public void setCommonMistakes(String commonMistakes) { this.commonMistakes = commonMistakes; }
+
+        public String getNotes() { return notes; }
+        public void setNotes(String notes) { this.notes = notes; }
     }
-}
